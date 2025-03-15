@@ -1,0 +1,130 @@
+Testovací případy pro hlavní menu (hlavni_menu)
+TC01: Volba 1 spustí pridat_ukol()
+Popis: Ověření, že volba čísla 1 spustí funkci pridat_ukol().
+Vstupní podmínky: Program zobrazuje hlavní menu.
+Kroky testu:
+Spustit program.
+Ověřit, že se zobrazí hlavní menu.
+Zadání čísla 1 a potvrzení Enterem.
+Očekávaný výsledek: Program spustí pridat_ukol() a vyzve k zadání úkolu.
+Skutečný výsledek: Program spustí pridat_ukol() a vyzve k zadání ukolu.
+Stav: Pass
+Poznámky: Ověření navigace v hlavním menu.
+
+
+
+TC02: Volba 2 spustí zobraz_ukol()
+Popis: Ověření, že volba čísla 2 správně zobrazí seznam úkolů.
+Vstupní podmínky: Program zobrazuje hlavní menu.
+Kroky testu:
+Spustit program.
+Ověřit, že se zobrazí hlavní menu.
+Zadání čísla 2 a potvrzení Enterem.
+Očekávaný výsledek: Program zobrazí seznam úkolů (prázdný nebo s obsahem).
+Skutečný výsledek:  Program zobrazí seznam úkolů (prázdný nebo s obsahem).
+Stav: Pass
+Poznámky: Kontrola správného výpisu úkolů.
+
+
+
+TC03: Zadání neplatné volby
+Popis: Ověření, že program správně reaguje na neplatnou volbu.
+Vstupní podmínky: Program zobrazuje hlavní menu.
+Kroky testu:
+Spustit program.
+Zadání nečíselné hodnoty (např. "x") nebo čísla mimo rozsah (0, 5).
+Očekávaný výsledek: Program zobrazí varování "Zadejte platné číslo od 1 do 4." a znovu zobrazí hlavní menu.
+Skutečný výsledek: Program zobrazí varování "Zadejte platné číslo od 1 do 4." a znovu zobrazí hlavní menu.
+Stav: Pass
+Poznámky: Ověření robustnosti vstupu.
+
+
+Testovací případy pro pridat_ukol()
+
+TC04: Přidání platného úkolu
+Popis: Ověření, že lze přidat úkol se správnými údaji.
+Vstupní podmínky: Seznam úkolů může být prázdný nebo obsahovat úkoly.
+Kroky testu:
+Spustit program a zvolit 1: Přidat úkol.
+Zadání názvu: "Nakoupit mléko".
+Zadání popisu: "Koupit v obchodě".
+Očekávaný výsledek: Program přidá úkol do seznamu a zobrazí potvrzení.
+Skutečný výsledek: Program přidá úkol do seznamu a zobrazí potvrzení.
+Stav: Pass
+Poznámky: Ověření základní funkčnosti přidání úkolu.
+
+
+
+TC05: Zadání prázdného názvu úkolu
+Popis: Ověření, že nelze přidat úkol bez názvu.
+Vstupní podmínky: Program čeká na zadání úkolu.
+Kroky testu:
+Zadání prázdného názvu (jen Enter).
+Očekávaný výsledek: Program zobrazí "Název nesmí být prázdný." a vrátí se do menu.
+Skutečný výsledek:Program zobrazí "Název nesmí být prázdný." a vrátí se do menu.
+Stav: Pass
+Poznámky: Ověření validace vstupu.
+
+
+
+Testovací případy pro zobraz_ukol()
+
+TC06: Zobrazení úkolů při prázdném seznamu
+Popis: Ověření, že program správně zobrazuje prázdný seznam.
+Vstupní podmínky: Žádné úkoly v seznamu.
+Kroky testu:
+Spustit program a zvolit 2: Zobrazit úkoly.
+Očekávaný výsledek: Program zobrazí [] nebo zprávu o prázdném seznamu.
+Skutečný výsledek: Program zobrazí [] nebo zprávu o prázdném seznamu.
+Stav: Pass
+Poznámky: Ověření výpisu prázdného seznamu.
+
+
+TC07: Zobrazení úkolů s existujícími položkami
+Popis: Ověření, že program správně zobrazí úkoly.
+Vstupní podmínky: V seznamu je alespoň jeden úkol.
+Kroky testu:
+Přidat alespoň jeden úkol.
+Spustit zobraz_ukol().
+Očekávaný výsledek: Program zobrazí seznam úkolů s číslem, názvem a popisem.
+Skutečný výsledek: Program zobrazí seznam úkolů s číslem, názvem a popisem.
+Stav: Pass
+Poznámky: Ověření správného výpisu úkolů.
+Testovací případy pro odstran_ukol()
+
+
+TC08: Odstranění existujícího úkolu
+Popis: Ověření, že lze odstranit úkol podle čísla.
+Vstupní podmínky: V seznamu je alespoň jeden úkol.
+Kroky testu:
+Přidat úkol.
+Spustit odstran_ukol().
+Zadání čísla existujícího úkolu.
+Očekávaný výsledek: Úkol bude odstraněn ze seznamu.
+Skutečný výsledek: Úkol bude odstraněn ze seznamu.
+Stav: Pass
+Poznámky: Ověření správné funkce mazání.
+
+
+
+TC09: Zadání čísla neexistujícího úkolu
+Popis: Ověření, že program neodstraní úkol, který neexistuje.
+Vstupní podmínky: Seznam obsahuje nějaké úkoly.
+Kroky testu:
+Spustit odstran_ukol().
+Zadání čísla, které není v seznamu (např. 99).
+Očekávaný výsledek: Program neodstraní žádný úkol.
+Skutečný výsledek: Program neodstraní žádný úkol
+Stav: Pass
+Poznámky: Ověření, že se neodstraní nesprávná data.
+
+Testovací případ pro konec_progamu()
+TC10: Ukončení programu
+Popis: Ověření, že program se ukončí
+Vstupní podmínky: Program běží a zobrazuje menu.
+Kroky testu:Spustit program
+Zvolit možnost 4 (konec programu)
+Očekávaný výsledek: Program se ukončí.
+Skutečný výsledek: Program se ukončí.
+Stav: Pass
+Poznámky: Ověření, že se program ukončí.
